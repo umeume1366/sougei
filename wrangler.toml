@@ -1,0 +1,19 @@
+# Cloudflare Workers の設定 (GitHub 連携の「npx wrangler deploy」でこのファイルが使われます)
+name = "sougei"
+main = "src/worker.js"
+compatibility_date = "2025-09-01"
+
+# 画面ファイル(HTML/JS/道路データ)
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+[vars]
+# Cloudflare Access を設定したら "1" にする(未ログインのアクセスを拒否)
+REQUIRE_ACCESS = "0"
+
+# データ保存先(KV)。作成したら下の3行の先頭の「# 」を消し、ID を貼って push する。
+# 未設定のあいだは、各ブラウザの中だけに保存されます(職員間で共有されません)。
+# [[kv_namespaces]]
+# binding = "SOUGEI_KV"
+# id = "ここにKVのIDを入れる"

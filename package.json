@@ -1,0 +1,14 @@
+{
+  "name": "sougei",
+  "private": true,
+  "description": "デイサービス送迎システム (地理院地図 + OpenStreetMap道路網 + Cloudflare Workers)",
+  "scripts": {
+    "build:graph": "node scripts/build-graph.mjs",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node test/router.test.mjs && node test/functions.test.mjs && node test/worker.test.mjs && node test/optimizer.test.js"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}
